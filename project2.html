@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Name and Images</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth; /* Enables smooth scrolling */
+            box-sizing: border-box;
+        }
+        body {
+            background-color: rgb(2, 2, 95);
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 60px;
+            background-color: rgb(1, 1, 41);
+            z-index: 1000; /* Ensures the navbar stays above other content */
+        }
+        nav ul {
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            list-style: none;
+            margin: 0 23px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: aliceblue;
+        }
+        nav ul li a:hover {
+            color: skyblue;
+        }
+        h1, h2 {
+            margin-top: 80px; /* Add space above h1 and h2 */
+            text-align: center; /* Center the headings */
+        }
+
+        .left{
+    font-size: 2rem;
+}
+        h1{
+           
+            top: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 60px;
+            background-color: rgb(1, 1, 41);
+            z-index: 1000;
+
+        }
+        .image-gallery {
+            display: flex;
+            flex-direction: column; /* Arrange each image container vertically */
+            margin-top: 5%;
+            align-items: center; /* Center the gallery horizontally */
+            gap: 20px; /* Gap between each image container */
+        }
+        .image-container {
+            display: flex;
+            align-items: flex-start; /* Align items at the top */
+            width: 80%; /* Set the width of each container */
+        }
+        .image-container img {
+            width: 30%; /* Set each image to occupy 30% of its container width */
+            border-radius: 8px; /* Optional: Add rounded corners to images */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add box shadow for a lifted effect */
+            margin-right: 20px; /* Space between image and details */
+            cursor: pointer; /* Change cursor to pointer on hover */
+        }
+        .image-details {
+            width: 70%; /* Set the width of the details section */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        /* Modal styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1001; /* Sit on top */
+            padding-top: 60px; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+        }
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+        .modal-content, #caption {
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+        @keyframes zoom {
+            from {transform: scale(0)}
+            to {transform: scale(1)}
+        }
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .image-details p{
+            margin-top: 8%
+        }
+
+        h2 {
+    border-bottom: 2px solid white; /* Add an underline */
+    padding-bottom: 10px; /* Add space between the text and underline */
+    /* Ensure the underline fits the text width */
+}
+
+        .image-details h3{
+            margin-top: 12%;
+          
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="left">Anand Portfolio</div>
+            <div class="right">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html">About</a></li>
+                    <li><a href="index.html">Projects</a></li>
+                    <li><a href="index.html">Skills</a></li>
+                    <li><a href="index.html">Education</a></li>
+                    <li><a href="index.html">Experience</a></li>
+                    <li><a href="index.html">Contact Me</a></li>
+                    <li><a href="index.html">Resume</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <h1>SkillWize</h1>
+        <h2>SCREENSHOTS</h2>
+        <div class="image-gallery">
+            <div class="image-container">
+                <img src="Assest/s4.png" alt="Image 1" onclick="openModal(this)">
+                <div class="image-details">
+                    <h3>Created a PHP-powered platform for students to connect based on skills. Designed features for skill showcasing and validation.
+                        Leveraged PHP for a seamless and interactive user experience.
+                        </h3>
+                </div>
+            </div>
+            <div class="image-container">
+                <img src="Assest/s3.png" alt="Image 2" onclick="openModal(this)">
+                <div class="image-details">
+                    <p>Objective: The objective of Skill Wize is to empower users through convenient access to diverse courses and resources, facilitating continuous skill enhancement and fostering a collaborative learning community.</p>
+                </div>
+            </div>
+            <div class="image-container">
+                <img src="Assest/s2.png" alt="Image 3" onclick="openModal(this)">
+                <div class="image-details">
+                    <p>Rationale: Skill Wize aims to address the growing demand for continuous learning and skill development in today's dynamic workforce by providing a user-friendly platform offering diverse courses, fostering collaboration, and enabling users to enhance their skills conveniently.
+                    </p>
+                </div>
+            </div>
+            <div class="image-container">
+                <img src="Assest/s1.png" alt="Image 4" onclick="openModal(this)">
+                <div class="image-details">
+                    <p>Focus: The focus of Skill Wize is to provide a user-centric online platform that promotes continuous learning, skill enhancement, and community collaboration through convenient access to diverse courses and resources</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+    </div>
+
+    <script>
+        function openModal(imgElement) {
+            var modal = document.getElementById("myModal");
+            var modalImg = document.getElementById("img01");
+            var captionText = document.getElementById("caption");
+
+            modal.style.display = "block";
+            modalImg.src = imgElement.src;
+            captionText.innerHTML = imgElement.alt;
+        }
+
+        function closeModal() {
+            var modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
+    </script>
+</body>
+</html>
