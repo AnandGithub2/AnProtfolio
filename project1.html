@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitaabe Project</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: rgb(2, 2, 95);
+            color: white;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        header .left {
+            font-size: 20px;
+        }
+        header .right ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+        header .right ul li {
+            margin-left: 20px;
+        }
+        header .right ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        header .menu-icon {
+            display: none;
+            cursor: pointer;
+            font-size: 24px;
+        }
+        h1, h2 {
+            margin-top: 100px;
+            text-align: center;
+        }
+        h2 {
+            border-bottom: 2px solid white;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .image-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .image-container {
+            width: 100%;
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            cursor: pointer;
+        }
+        .image-container img {
+            width: 100%;
+            max-width: 300px; /* Limit maximum width for larger screens */
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .image-container img:hover {
+            transform: scale(1.1);
+        }
+        .image-details {
+            flex: 1;
+            padding: 10px;
+            border-radius: 8px;
+            background-color: rgba(0, 0, 0, 0.7);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .image-container:hover .image-details {
+            opacity: 1;
+        }
+        .image-details p {
+            font-size: 14px;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1001;
+            padding-top: 60px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+        .modal-content, #caption {
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+        @keyframes zoom {
+            from {transform: scale(0)}
+            to {transform: scale(1)}
+        }
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+        }
+        @media (max-width: 768px) {
+            header .menu-icon {
+                display: block;
+            }
+            header .right {
+                display: none;
+                position: fixed;
+                top: 0;
+                right: 0;
+                background-color: #333;
+                height: 100%;
+                width: 250px;
+                transform: translateX(100%);
+                transition: transform 0.3s ease;
+                z-index: 999;
+            }
+            header .right.open {
+                transform: translateX(0);
+            }
+            header .right ul {
+                flex-direction: column;
+                padding: 50px 20px 20px;
+            }
+            header .right ul li {
+                margin-left: 0;
+                margin-bottom: 20px;
+            }
+            .image-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .image-container img {
+                width: 100%;
+            }
+            .image-details {
+                width: 100%;
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="left">Best Ways of Design</div>
+            <div class="menu-icon" onclick="toggleMenu()">&#x22EE;</div>
+            <div class="right">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skill">Skills</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#contact">Contact Me</a></li>
+                    <li><a href="#resume">Resume</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <h1>Kitaabe</h1>
+        <h2>SCREENSHOTS</h2>
+        <div class="image-gallery">
+            <div class="image-container">
+                <img src="Assest/k4.png" alt="Image 1" onclick="openModal(this)">
+                <div class="image-details">
+                    <p>Developed an ASP.NET-based e-commerce site for used books.
+                        Implemented secure transactions and order tracking.
+                        Showcased proficiency in ASP.NET for robust functionality.
+                        </p>
+                </div>
+            </div>
+            <div class="image-container">
+                <img src="Assest/k1.png" alt="Image 2" onclick="openModal(this)">
+                <div class="image-details">
+                    <p>Objective: To create a transformative digital solution bridging economics and education by facilitating the exchange of used books for students and lifelong learners.</p>
+                </div>
+            </div>
+            <div class="image-container">
+                <img src="Assest/k3.png" alt="Image 3" onclick="openModal(this)">
+                <div class="image-details">
+                    <p>Key Features: User-friendly platform for buying and selling used books, focus on economic dynamics of the used book market, reduction of financial burdens on students, exploration of broader implications for education and economics in the digital age.</p>
+                </div>
+            </div>
+            <div class="image-container">
+                <img src="Assest/k2.png" alt="Image 4" onclick="openModal(this)">
+                <div class="image-details">
+                    <p>Focus: To revolutionize the used books market by connecting buyers and sellers and optimizing textbook and learning material exchange. Explore the economics of the used books industry and present innovative solutions for buying and selling books conveniently and at competitive prices.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+    </div>
+
+    <script>
+        function openModal(imgElement) {
+            var modal = document.getElementById("myModal");
+            var modalImg = document.getElementById("img01");
+            var captionText = document.getElementById("caption");
+
+            modal.style.display = "block";
+            modalImg.src = imgElement.src;
+            captionText.innerHTML = imgElement.alt;
+        }
+
+        function closeModal() {
+            var modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
+
+        function toggleMenu() {
+            var menu = document.querySelector('.right');
+            menu.classList.toggle('open');
+        }
+    </script>
+</body>
+</html>
