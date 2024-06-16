@@ -9,30 +9,30 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
-
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
     <header>
         <nav>
-            <div class="left">Anand Protfolio</div>
-            <div class="menu-icon" onclick="toggleMenu()">&#x22EE;</div>
+            <div class="left">Anand Portfolio</div>
+            <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
             <div class="right">
-                <ul>
+                <ul id="nav-menu">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#projects">Projects</a></li>
-                    <li><a href="#skill">Skills</a></li>
+                    <li><a href="#skills">Skills</a></li>
                     <li><a href="#education">Education</a></li>
                     <li><a href="#experience">Experience</a></li>
-                    <li><a href="#contact">Contact Me</a></li>
+                    <li><a href="#contact">Contact</a></li>
                     <li><a href="#resume">Resume</a></li>
                 </ul>
             </div>
         </nav>
     </header>
 
-    <main>
-        <section id="home" class="section firstSection">
+    <main class="main-content">
+        <section id="home" class="section first-section" data-aos="fade-up">
             <div class="rightSection">
                 <img src="an.jpg.jpeg" alt="Anand's Profile Picture">
             </div>
@@ -43,7 +43,7 @@
             </div>
         </section>
 
-        <section id="about" class="section">
+        <section id="about" class="section" data-aos="fade-right">
             <h1>About Me</h1>
             <p>Hello! I'm Anand Prajapati, a passionate and dedicated web developer with expertise in CSS, Java, HTML, JavaScript, PHP, and Python. I thrive on creating dynamic and responsive websites that provide seamless user experiences.</p>
             <p>I am committed to continuous learning and staying updated with the latest trends and technologies in web development. My approach focuses on writing clean, efficient, and scalable code, prioritizing user experience and accessibility.</p>
@@ -57,83 +57,82 @@
             </ul>
         </section>
 
-         <section id="projects" class="section">
-        <h1>My Projects</h1>
-        <div class="projects">
-            <a href="project1.html" class="project-link">
-                <div class="project-container">
-                    <img src="lk.jpg" alt="Kitaabe Project">
-                    <div class="project-title">Kitaabe</div>
-                    <div class="project-details">
-                        <p>Kitaabe: Used Books E-commerce (ASP.NET)</p>
+        <section id="projects" class="section" data-aos="fade-up">
+            <h1>My Projects</h1>
+            <div class="projects">
+                <a href="project1.html" class="project-link">
+                    <div class="project-container" data-aos="zoom-in">
+                        <img src="lk.jpg" alt="Kitaabe Project">
+                        <div class="project-title">Kitaabe</div>
+                        <div class="project-details">
+                            <p>Kitaabe: Used Books E-commerce (ASP.NET)</p>
+                        </div>
                     </div>
-                </div>
-            </a>
-            <a href="project2.html" class="project-link">
-                <div class="project-container">
-                    <img src="ls.jpg" alt="SkillWize Project">
-                    <div class="project-title">SkillWize</div>
-                    <div class="project-details">
-                        <p>Skillwize: Student Skill Networking (PHP)</p>
+                </a>
+                <a href="project2.html" class="project-link">
+                    <div class="project-container" data-aos="zoom-in">
+                        <img src="ls.jpg" alt="SkillWize Project">
+                        <div class="project-title">SkillWize</div>
+                        <div class="project-details">
+                            <p>SkillWize: Student Skill Networking (PHP)</p>
+                        </div>
                     </div>
-                </div>
-            </a>
-            
-        </div>
-              <button>Please Click Any Image See Project </button>
-    </section>
-        <section id="skill" class="section">
+                </a>
+            </div>
+        </section>
+
+        <section id="skills" class="section" data-aos="fade-right">
             <h1>My Skills</h1>
             <h2>Languages</h2>
             <div class="languages">
-                <div class="skill">
+                <div class="skill" data-aos="flip-left">
                     <i class="fab fa-html5"></i>
                     <div class="skill-name">HTML</div>
                 </div>
-                <div class="skill">
+                <div class="skill" data-aos="flip-left">
                     <i class="fab fa-css3-alt"></i>
                     <div class="skill-name">CSS</div>
                 </div>
-                <div class="skill">
+                <div class="skill" data-aos="flip-left">
                     <i class="fab fa-js"></i>
                     <div class="skill-name">JavaScript</div>
                 </div>
-                <div class="skill">
+                <div class="skill" data-aos="flip-left">
                     <i class="fab fa-python"></i>
                     <div class="skill-name">Python</div>
                 </div>
-                <div class="skill">
+                <div class="skill" data-aos="flip-left">
                     <i class="fab fa-java"></i>
                     <div class="skill-name">Java</div>
                 </div>
             </div>
             <h2>Databases</h2>
             <div class="databases">
-                <div class="skill">
+                <div class="skill" data-aos="flip-right">
                     <i class="fas fa-database"></i>
                     <div class="skill-name">MySQL</div>
                 </div>
-                <div class="skill">
+                <div class="skill" data-aos="flip-right">
                     <i class="fas fa-database"></i>
                     <div class="skill-name">MongoDB</div>
                 </div>
             </div>
             <h2>Other Technologies</h2>
             <div class="others">
-                <div class="skill">
+                <div class="skill" data-aos="flip-up">
                     <i class="fab fa-git-alt"></i>
                     <div class="skill-name">Git</div>
                 </div>
             </div>
         </section>
 
-        <section id="education" class="section">
+        <section id="education" class="section" data-aos="fade-up">
             <h1>Education</h1>
             <div class="education-item">
-                <h2>Narmada College Science And Commerce</h2>
+                <h2>Narmada College Science and Commerce</h2>
                 <h3>Location: Bharuch, Zadeshwar</h3>
                 <p class="degree">Degree: Bachelor of Computer Science</p>
-                <p class="course">CGPA : 7.01</p>
+                <p class="course">CGPA: 7.01</p>
                 <p class="percent">Percentage: 68%</p>
             </div>
             <div class="education-item">
@@ -145,7 +144,7 @@
             </div>
         </section>
 
-        <section id="experience" class="section">
+        <section id="experience" class="section" data-aos="fade-right">
             <h1>Experience</h1>
             <div class="experience-item">
                 <div class="experience-left">
@@ -177,7 +176,7 @@
             </div>
         </section>
 
-        <section id="contact" class="section contact-info">
+        <section id="contact" class="section contact-info" data-aos="fade-up">
             <h1>Contact Me</h1>
             <div class="contact-item">
                 <i class="fas fa-envelope"></i> anandprajapati.official1@gmail.com
@@ -186,101 +185,40 @@
                 <i class="fas fa-phone"></i> +91 9316235602
             </div>
             <div class="contact-item">
-                <i class="fas fa-map-marker-alt"></i> RajPipla Road Mira Nagar, Ankleshwar-393001
+                <i class="fas fa-map-marker-alt"></i> rajpipla road, mira nagar ,Ankleshwar, 393001
             </div>
         </section>
 
-        <section id="resume" class="section">
+        <section id="resume" class="section resume-container" data-aos="fade-up">
             <h1>Resume</h1>
-            <div class="resume-container">
-                <div class="pdf-image">
-                    <img src="Anand.pdf" alt="PDF Icon">
-                    <p>Loading PDF...</p>
-                </div>
-                <embed id="pdfEmbed" src="" type="application/pdf" width="100%" height="1000px" style="display: none;">
-            </div>
+            <img src="e1.jpeg" alt="Anand's Resume">
         </section>
-        
     </main>
 
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-        var typed = new Typed('#element', {
-            strings: ['Graphics Design','Data Entry','Video Editing','Full Stack Developer', 'Web Developer.'],
-            typeSpeed: 40,
-        });
+        AOS.init();
 
         function toggleMenu() {
-            const menu = document.querySelector('.right ul');
+            var menu = document.getElementById('nav-menu');
             menu.classList.toggle('active');
         }
+        let scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
-        document.querySelectorAll('.project-container').forEach(function(container) {
-            container.addEventListener('mouseenter', function() {
-                this.querySelector('.project-details').style.bottom = '0%';
-            });
-            container.addEventListener('mouseleave', function() {
-                this.querySelector('.project-details').style.bottom = '-100%';
-            });
-        });
+window.onscroll = function() {scrollFunction()};
 
-        document.querySelectorAll('.skill').forEach(function(skill) {
-            skill.addEventListener('mouseenter', function() {
-                this.style.backgroundColor = '#f0f0f0';
-                this.style.transition = 'background-color 0.5s';
-            });
-            skill.addEventListener('mouseleave', function() {
-                this.style.backgroundColor = 'transparent';
-            });
-        });
-        document.addEventListener('DOMContentLoaded', function() {
-    // Set the URL of the PDF file
-    const pdfUrl = 'Anand.pdf';
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        scrollToTopBtn.style.display = "block";
+    } else {
+        scrollToTopBtn.style.display = "none";
+    }
+}
 
-    // Get the elements
-    const pdfEmbed = document.getElementById('pdfEmbed');
-    const pdfImage = document.querySelector('.pdf-image');
-
-    // Show loading message
-    pdfImage.style.display = 'flex';
-
-    // Create a new XMLHttpRequest object
-    const xhr = new XMLHttpRequest();
-
-    // Open the XMLHttpRequest with GET request for the PDF file
-    xhr.open('GET', pdfUrl, true);
-
-    // Set responseType to blob
-    xhr.responseType = 'blob';
-
-    // On progress, update loading message
-    xhr.addEventListener('progress', function(event) {
-        const percentComplete = (event.loaded / event.total) * 100;
-        pdfImage.innerHTML = `<img src="./Assest/pdf-icon.png" alt="PDF Icon"><p>Loading PDF... ${percentComplete.toFixed(2)}%</p>`;
-    });
-
-    // On successful load, display the PDF
-    xhr.onload = function() {
-        if (xhr.status === 200) {
-            const blob = new Blob([xhr.response], { type: 'application/pdf' });
-            const url = URL.createObjectURL(blob);
-            pdfEmbed.src = url;
-            pdfEmbed.style.display = 'block';
-            pdfImage.style.display = 'none';
-        } else {
-            pdfImage.innerHTML = `<p>Failed to load PDF.</p>`;
-        }
-    };
-
-    // On error, display error message
-    xhr.onerror = function() {
-        pdfImage.innerHTML = `<p>Failed to load PDF.</p>`;
-    };
-
-    // Send the XMLHttpRequest
-    xhr.send();
+scrollToTopBtn.addEventListener("click", () => {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 });
-
     </script>
 </body>
 </html>
